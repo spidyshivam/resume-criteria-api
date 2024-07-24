@@ -37,7 +37,7 @@ def generate_response(pdf_text, criteria):
     return summary
 
 
-@app.post("/generate-content")
+@app.post("/process-pdf")
 async def generate_content(file: UploadFile = File(...), criteria: str = Form(...)):
     # Save the uploaded file temporarily
     file_location = f"./{file.filename}"
